@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/components/home/home.component';
 import { MascotasFormComponent } from './pages/components/mascotas-form/mascotas-form.component';
 import { MascotasListComponent } from './pages/components/mascotas-list/mascotas-list.component';
 import { NavigationComponent } from './pages/components/navigation/navigation.component';
+import { AboutUsComponent } from './pages/components/about-us/about-us.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { NavigationComponent } from './pages/components/navigation/navigation.co
     HomeComponent,
     MascotasListComponent,
     MascotasFormComponent,
-    NavigationComponent
+    NavigationComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
