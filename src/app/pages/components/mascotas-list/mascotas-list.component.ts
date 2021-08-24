@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MascotasServiceService } from '../../services/mascotas-service.service';
 
 @Component({
   selector: 'app-mascotas-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MascotasListComponent implements OnInit {
 
-  constructor() { }
+  mascotas: any = [];
+  constructor(private mascotasServiceService: MascotasServiceService) {
+   }
 
   ngOnInit(): void {
+    this.getMascotas();
+  }
+
+  getMascotas() {
+    this.mascotasServiceService.getMascotas().subscribe(
+      res => {
+        this.mascotas = res;
+      },
+      err => console.error(err)
+    );
   }
 
 }

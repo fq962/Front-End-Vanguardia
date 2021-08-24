@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/components/about-us/about-us.component';
+import { LoginComponent } from './pages/components/login/login.component';
 import { MascotasFormComponent } from './pages/components/mascotas-form/mascotas-form.component';
 import { MascotasListComponent } from './pages/components/mascotas-list/mascotas-list.component';
 
@@ -20,8 +21,8 @@ const routes: Routes = [
     component: AboutUsComponent
   },
   {
-    path: 'mascotas/add',
-    component: MascotasFormComponent
+    path: 'mascotas/login',
+    component: LoginComponent
   },
   {
     path: 'mascotas/edit/:id',

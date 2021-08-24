@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +10,8 @@ import { MascotasFormComponent } from './pages/components/mascotas-form/mascotas
 import { MascotasListComponent } from './pages/components/mascotas-list/mascotas-list.component';
 import { NavigationComponent } from './pages/components/navigation/navigation.component';
 import { AboutUsComponent } from './pages/components/about-us/about-us.component';
+import { LoginComponent } from './pages/components/login/login.component';
+
 
 
 @NgModule({
@@ -17,11 +21,13 @@ import { AboutUsComponent } from './pages/components/about-us/about-us.component
     MascotasListComponent,
     MascotasFormComponent,
     NavigationComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
