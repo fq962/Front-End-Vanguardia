@@ -1,28 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MascotasServiceService } from '../../services/mascotas-service.service';
+import { Mascotas } from '../../interfaces/interface';
+import { Routes } from '@angular/router';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-mascotas-list',
   templateUrl: './mascotas-list.component.html',
   styleUrls: ['./mascotas-list.component.css']
 })
-export class MascotasListComponent implements OnInit {
+export class MascotasListComponent implements OnInit{
 
-  mascotas: any = [];
-  constructor(private mascotasServiceService: MascotasServiceService) {
-   }
+   
+  constructor(private darleNombre: MascotasServiceService ){ }
 
-  ngOnInit(): void {
-    this.getMascotas();
-  }
 
-  getMascotas() {
-    this.mascotasServiceService.getMascotas().subscribe(
-      res => {
-        this.mascotas = res;
-      },
-      err => console.error(err)
-    );
-  }
+ ngOnInit () {}
 
 }
