@@ -1,8 +1,7 @@
-import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { Mascotas } from '../interfaces/interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +10,10 @@ export class MascotasServiceService {
 
   constructor ( private https: HttpClient) {}
 
+
+  getMascotas(): Observable<any> {
+    return this.https.get('https://app-keneth.herokuapp.com/getAllpets');
+  }
 }
 
 /*   api: string = 'https://app-keneth.herokuapp.com/getAllpets';
