@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, HostBinding, OnInit} from '@angular/core';
 import { MascotasServiceService } from '../../services/mascotas-service.service';
 import { Mascotas } from '../../interfaces/interface';
 import { Routes } from '@angular/router';
@@ -13,13 +13,14 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class MascotasListComponent implements OnInit{
 
    
-  constructor(private darleNombre: MascotasServiceService ){ }
+  constructor(private mascotasServiceService: MascotasServiceService ){ }
+  @HostBinding('class') clases = 'row';
 
   listaMascotas: Mascotas[] | undefined;
 
- ngOnInit () {
+ async ngOnInit () {
 
-  this.darleNombre.getMascotas().subscribe(
+  this.mascotasServiceService.getMascotas().subscribe(
     data => {
       this.listaMascotas = data;
       console.log(this.listaMascotas);

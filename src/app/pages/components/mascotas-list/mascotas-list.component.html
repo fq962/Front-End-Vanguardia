@@ -16,12 +16,19 @@
                 incidunt, quis tempora placeat tempore aperiam omnis odio <br> 
                 voluptatum porro iure autem recusandae vero.
             </p>
+    </div>
 
-             <div *ngFor="let mas of listaMascotas">
-                <h3>{{mas.NombreMascota}}</h3>
-                <h3>{{mas.edad}}</h3>
-                <img src="{{mas.imagenes}}" alt="">
-
-            </div> 
+    <div class="col-md-4" style="margin-top: 20px;" *ngFor="let mas of listaMascotas">
+        <div class="card text-center"></div>
+        <div class="card-header bg-dark text-white d-flex justify-content-between alig-items-center">
+            {{mas.NombreMascota}}
+            <button class="btn btn-danger">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>Edad: {{mas.edad}}</p>
+            <img [src]=mas.imagenes class="card-img-top">
+        </div>
     </div>
 

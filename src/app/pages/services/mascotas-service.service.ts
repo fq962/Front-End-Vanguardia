@@ -1,6 +1,8 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
+import Swal from 'sweetalert2';
+import { Mascotas } from '../interfaces/interface';
 
 
 @Injectable({
@@ -10,11 +12,16 @@ export class MascotasServiceService {
 
   constructor ( private https: HttpClient) {}
 
-
   getMascotas(): Observable<any> {
+    Swal.fire(
+      'Good job!',
+      'You clicked the button!',
+      'success'
+    )
     return this.https.get('https://app-keneth.herokuapp.com/getAllpets');
   }
-}
+
+
 
 /*   api: string = 'https://app-keneth.herokuapp.com/getAllpets';
 
@@ -45,5 +52,5 @@ export class MascotasServiceService {
   })
   } */
 
-
+}
 
